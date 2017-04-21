@@ -1,0 +1,122 @@
+$box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 0.2), 0px 2px 4px 0px white;
+$popup-bg: -webkit-gradient(linear, left top, left bottom, color-stop(80%, black), color-stop(100%,darkblue));
+$slider-bg: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ebf1f6),
+						color-stop(50%,#abd3ee), color-stop(51%,#89c3eb), color-stop(100%,#d5ebfb));
+
+@mixin shadow-nohover {
+	box-shadow: 1px 1px 2px white, 0 0 20px blue, 0 0 40px darkblue;
+	-moz-box-shadow: 1px 1px 2px white, 0 0 20px blue, 0 0 40px darkblue;
+	-webkit-box-shadow: 1px 1px 2px white, 0 0 20px blue, 0 0 40px darkblue;
+}
+
+@mixin shadow-hover {
+	box-shadow: 1px 1px 2px white, 0 0 100px red, 0 0 100px red;
+	-moz-box-shadow: 1px 1px 2px white, 0 0 100px red, 0 0 100px red;
+	-webkit-box-shadow: 1px 1px 2px white, 0 0 100px red, 0 0 100px red;
+}
+
+@mixin input-setting {
+	background-color: black;
+	margin: auto;
+  width: 40%;
+  box-shadow: $box-shadow;
+}
+
+@mixin transition {
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+@mixin appereance {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-progress-appearance: none;
+}
+
+.jumbotron {
+	@include shadow-nohover;
+  background: black;
+  color: white;
+  text-align: center;
+
+	.cost {
+		font-size: 40px;
+		width: 40%;
+		height: auto;
+		margin: auto;
+		margin-top: 40px;
+	}
+
+	h2:hover, .cost:hover {
+		@include transition;
+		@include shadow-hover;
+	}
+
+	h2:not(:hover), .cost:not(:hover) {
+		@include transition;
+		@include shadow-nohover;
+	}
+}
+
+.form-group {
+	label {
+		padding-top: 40px;
+		font-size: 16px
+	}
+
+	input:hover  {
+		border-color: darkblue
+	}
+
+	input[type="range"] {
+		@include input-setting;
+		@include appereance;
+		height: 2px;
+	}
+
+	input[type="number"] {
+		@include input-setting;
+		-webkit-text-fill-color: white;
+		text-shadow: 2px 2px 5px white;
+		
+	}
+
+	input[type="range"]::-webkit-slider-thumb {
+		@include appereance;
+		width: 11px;
+		height: 11px;
+		cursor: pointer;
+		box-shadow: 0px 2px 3px 0px white;
+		border-radius: 100%;
+		background-image: $slider-bg;
+	}
+
+	input[type="range"]:hover ~ #popup,input[type="range"]:active ~ #popup {
+		opacity: 1;
+		top: 10px;
+		border-color: darkblue;
+	}
+
+	output {
+		@include transition;
+		@include shadow-nohover;
+		width: 35px;
+		color: white;
+		font-size: 16px;
+		font-style: bold;
+		text-align: center;
+		margin: auto;
+		position: relative;
+		border: 0.5px solid white;
+		border-radius: 60%;
+		box-shadow: $box-shadow;
+		background: $popup-bg;
+		opacity: 0;
+		top: 30px;
+	}
+}
+
+

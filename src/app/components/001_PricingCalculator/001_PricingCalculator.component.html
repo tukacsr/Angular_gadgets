@@ -1,0 +1,29 @@
+<div class="jumbotron">
+  <h2>How much do pies cost?</h2>
+
+  <form>
+    <div class="form-group">
+      <label for="price">
+        Price (€)
+      </label>
+      <input [(ngModel)]="price" #pctrl="ngModel" type="number"
+            class="form-control" name="price" value="1">
+    </div>
+    <div class="form-group">
+      <label for="quantity">
+        Quantity
+      </label>
+      <input [(ngModel)]="quantity" #qctrl="ngModel" type="range"
+            class="form-control" name="quantity" value="1" min-value="1"
+            max-value="100"/>
+      <output> {{ quantity }} </output>
+    </div>
+  </form>
+
+  <div class="cost"> €{{ price * quantity }} </div>
+</div>
+
+<footer>
+  <p>Application idea: https://school.scotch.io/getting-started-with-javascript/pricing-calculator</p>
+  <p>Range style idea: http://jsfiddle.net/3JJJb/542/</p>
+</footer>
