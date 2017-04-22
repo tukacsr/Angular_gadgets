@@ -8,13 +8,15 @@ import { AppComponent } from './app.component'
 import { HomeComponent } from './components/000_Home/000_Home.component'
 import { PricingCalculatorComponent } from './components/001_PricingCalculator/001_PricingCalculator.component'
 import { CrazyButtonsComponent } from './components/002_CrazyButtons/002_CrazyButtons.component'
+import { DharmaTimerComponent } from './components/003_DharmaTimer/003_DharmaTimer.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PricingCalculatorComponent,
-    CrazyButtonsComponent
+    CrazyButtonsComponent,
+    DharmaTimerComponent
   ],
   imports: [
     BrowserModule,

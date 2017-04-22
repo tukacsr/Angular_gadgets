@@ -1,0 +1,25 @@
+.jumbotron {
+  width: 70%;
+  margin: auto;
+  background-color: black;
+}
+
+#timer {
+  border-color: blue
+}
+
+.btn-danger, .btn-success {
+  display: none
+}
+
+#btn-reset {
+  margin-top: 200px;
+  background-color: red;
+  width: 100px;
+  margin: auto;
+  display: block;
+}
+
+#empty {
+  padding: 100px;
+}
