@@ -1,0 +1,17 @@
+<div class="accordion">
+  <ul class="list-unstyled" *ngFor="let text of texts">
+    <li class="open">
+      <div class="question">
+        <h2> {{ text.q }} </h2>
+        <span class="glyphicon glyphicon-chevron-down"> </span>
+      </div>
+      <div class="answer">
+        <p> {{ text.a }} <br /> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias dignissimos libero, et pariatur similique dolores autem odit minima expedita nemo blanditiis asperiores ad atque repudiandae dolorum distinctio, reiciendis fugit adipisci. </p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<footer>
+  <p>Application idea (in JS): https://school.scotch.io/getting-started-with-javascript/accordion</p>
+</footer>
