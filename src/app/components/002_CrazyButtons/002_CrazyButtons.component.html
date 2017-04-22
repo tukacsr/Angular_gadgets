@@ -1,3 +1,20 @@
-<p>
-  002-crazy-buttons works!
-</p>
+<div id="container" class="jumbotron">
+  <button type="button" class="btn-crazy btn btn-lg btn-danger">   </button>
+  <button type="button" class="btn-crazy btn btn-lg btn-primary">  </button>
+  <button type="button" class="btn-crazy btn btn-lg btn-success">  </button>
+  <button type="button" class="btn-crazy btn btn-lg btn-info">     </button>
+  <button type="button" class="btn-crazy btn btn-lg btn-warning">  </button>
+  <button type="button" class="btn-crazy btn btn-lg btn-default">  </button>
+</div>
+
+<div style="position: absolute; right: 30px; top: 70px; width: 100px; text-align: center; background-color: black;">
+  <div class="modal-content" style="width:100%">
+    <p> Score: {{ score }} </p>
+  </div>
+</div>
+
+<footer *ngIf="footer">
+  <p>Application idea: https://school.scotch.io/getting-started-with-javascript/crazy-buttons</p>
+  <p>Range style idea: http://jsfiddle.net/3JJJb/542/</p>
+</footer>
+
