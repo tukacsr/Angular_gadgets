@@ -11,6 +11,7 @@ import { CrazyButtonsComponent } from './components/002_CrazyButtons/002_CrazyBu
 import { DharmaTimerComponent } from './components/003_DharmaTimer/003_DharmaTimer.component'
 import { AccordionComponent } from './components/004_Accordion/004_Accordion.component'
 import { ScrollProgressComponent } from './components/005_ScrollProgress/005_ScrollProgress.component'
+import { FloatingInputComponent } from './components/006_FloatingInput/006_FloatingInput.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ScrollProgressComponent } from './components/005_ScrollProgress/005_Scr
     CrazyButtonsComponent,
     DharmaTimerComponent,
     AccordionComponent,
-    ScrollProgressComponent
+    ScrollProgressComponent,
+    FloatingInputComponent
   ],
   imports: [
     BrowserModule,
