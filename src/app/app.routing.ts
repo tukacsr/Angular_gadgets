@@ -6,13 +6,15 @@ import { PricingCalculatorComponent } from './components/001_PricingCalculator/0
 import { CrazyButtonsComponent } from './components/002_CrazyButtons/002_CrazyButtons.component'
 import { DharmaTimerComponent } from './components/003_DharmaTimer/003_DharmaTimer.component'
 import { AccordionComponent } from './components/004_Accordion/004_Accordion.component'
+import { ScrollProgressComponent } from './components/005_ScrollProgress/005_ScrollProgress.component'
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: '001', component: PricingCalculatorComponent },
   { path: '002', component: CrazyButtonsComponent },
   { path: '003', component: DharmaTimerComponent },
-  { path: '004', component: AccordionComponent }
+  { path: '004', component: AccordionComponent },
+  { path: '005', component: ScrollProgressComponent }
 ]
 
 export const appRouting: ModuleWithProviders = RouterModule.forRoot(appRoutes)
