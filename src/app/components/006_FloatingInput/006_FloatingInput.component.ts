@@ -7,23 +7,26 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 
 export class FloatingInputComponent implements OnInit {
-  bg: any;
+  bg: Element;
   bookmarkInput: any;
   bookmarksList: any;
   bookmarkForm: any;
+  bookmarks: any;
 
   constructor() { }
 
   ngOnInit() {
-    this.bg = document.querySelector('.background');;
-    const input = document.querySelector('input[type=text]');
-    this.bookmarksList = document.querySelector('.bookmarks-list');
-    this.bookmarkForm = document.querySelector('.bookmark-form');
+    this.bg = document.querySelector('.background');
     this.bookmarkInput = document.querySelector('input[type=text]');
+    this.bookmarkForm = document.querySelector('.bookmark-form');
+    this.bookmarksList = document.querySelector('.bookmarks-list');
+    this.bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
 
-    input.addEventListener('focusin', this.showFloater);
-    input.addEventListener('focusout', this.closeFloater);
+    this.bookmarkInput.addEventListener('focusin', this.showFloater);
+    this.bookmarkInput.addEventListener('focusout', this.closeFloater);
     this.bookmarkForm.addEventListener('submit', this.createBookmark);
+
+    this.fillBookmarksList(this.bookmarks);
   }
 
   showFloater = () => {
@@ -39,14 +42,26 @@ export class FloatingInputComponent implements OnInit {
   createBookmark = (e) => {
     e.preventDefault();
 
-    const title = this.bookmarkInput.value;
-    const bookmark = document.createElement('a');
-    bookmark.className = 'bookmark';
-    bookmark.innerText = title;
-    bookmark.href = '#';
-    bookmark.target = '_blank';
+    const title = String(this.bookmarkInput.value);
+    const bookmark = {
+      title: title
+    };
 
-    this.bookmarksList.appendChild(bookmark);
+    this.bookmarks.push(bookmark);
+    this.fillBookmarksList(this.bookmarks);
+    this.storeBookmarks(this.bookmarks);
     this.bookmarkForm.reset();
+  }
+
+  fillBookmarksList = (bookmarks = []) => {
+    const bookmarksHtml = bookmarks.map((bookmark) => {
+      return `<a href="#" class="bookmark"> ${bookmark.title}`;
+    }).join('');
+
+    this.bookmarksList.innerHTML = bookmarksHtml;
+  }
+
+  storeBookmarks = (bookmarks = []) => {
+    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
   }
 }
