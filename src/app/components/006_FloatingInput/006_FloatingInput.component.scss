@@ -13,8 +13,11 @@
   top: 1;
   left: 0;
   width: 100%;
+  min-height: 100%;
   background-image: url('../../../assets/006.jpg');
   background-size: contain;
+  background-position-x: center;
+  background-repeat: repeat-y;
   transition: 0.4s ease all;
 }
 
