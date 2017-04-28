@@ -94,7 +94,7 @@ $slider-bg: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ebf1f
 		background-image: $slider-bg;
 	}
 
-	input[type="range"]:hover ~ #popup,input[type="range"]:active ~ #popup {
+	input[type="range"]:hover ~ output,input[type="range"]:active ~ output {
 		opacity: 1;
 		top: 10px;
 		border-color: darkblue;
