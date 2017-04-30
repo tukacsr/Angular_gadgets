@@ -9,7 +9,7 @@ import { AccordionComponent } from './components/004_Accordion/004_Accordion.com
 import { ScrollProgressComponent } from './components/005_ScrollProgress/005_ScrollProgress.component'
 import { FloatingInputComponent } from './components/006_FloatingInput/006_FloatingInput.component'
 import { AnimeJsComponent } from './components/007_AnimeJS/007_AnimeJS.component'
-
+import { CanvasComponent } from './components/008_CanvasDraw/008_CanvasDraw.component'
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,7 +19,8 @@ const appRoutes: Routes = [
   { path: '004', component: AccordionComponent },
   { path: '005', component: ScrollProgressComponent },
   { path: '006', component: FloatingInputComponent },
-  { path: '007', component: AnimeJsComponent }
+  { path: '007', component: AnimeJsComponent },
+  { path: '008', component: CanvasComponent }
 ]
 
 export const appRouting: ModuleWithProviders = RouterModule.forRoot(appRoutes)

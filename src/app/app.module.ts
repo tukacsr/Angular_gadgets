@@ -13,6 +13,12 @@ import { AccordionComponent } from './components/004_Accordion/004_Accordion.com
 import { ScrollProgressComponent } from './components/005_ScrollProgress/005_ScrollProgress.component'
 import { FloatingInputComponent } from './components/006_FloatingInput/006_FloatingInput.component'
 import { AnimeJsComponent } from './components/007_AnimeJS/007_AnimeJS.component'
+import { CanvasComponent } from './components/008_CanvasDraw/008_CanvasDraw.component'
+
+import 'rxjs/add/observable/fromEvent';
+import 'rxjs/add/operator/takeUntil';
+import 'rxjs/add/operator/pairwise';
+import 'rxjs/add/operator/switchMap';
 
 @NgModule({
   declarations: [
@@ -24,7 +30,8 @@ import { AnimeJsComponent } from './components/007_AnimeJS/007_AnimeJS.component
     AccordionComponent,
     ScrollProgressComponent,
     FloatingInputComponent,
-    AnimeJsComponent
+    AnimeJsComponent,
+    CanvasComponent
   ],
   imports: [
     BrowserModule,
