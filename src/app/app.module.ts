@@ -14,6 +14,7 @@ import { ScrollProgressComponent } from './components/005_ScrollProgress/005_Scr
 import { FloatingInputComponent } from './components/006_FloatingInput/006_FloatingInput.component'
 import { AnimeJsComponent } from './components/007_AnimeJS/007_AnimeJS.component'
 import { CanvasComponent } from './components/008_CanvasDraw/008_CanvasDraw.component'
+import { AnimatedButtonsComponent } from './components/009_AnimatedButtons/009_AnimatedButtons.component'
 
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/operator/takeUntil';
@@ -31,7 +32,8 @@ import 'rxjs/add/operator/switchMap';
     ScrollProgressComponent,
     FloatingInputComponent,
     AnimeJsComponent,
-    CanvasComponent
+    CanvasComponent,
+    AnimatedButtonsComponent
   ],
   imports: [
     BrowserModule,
