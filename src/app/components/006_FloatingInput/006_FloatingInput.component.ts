@@ -25,6 +25,7 @@ export class FloatingInputComponent implements OnInit {
     this.bookmarkInput.addEventListener('focusin', this.showFloater);
     this.bookmarkInput.addEventListener('focusout', this.closeFloater);
     this.bookmarkForm.addEventListener('submit', this.createBookmark);
+    this.bookmarksList.addEventListener('click', this.removeBookmark);
 
     this.fillBookmarksList(this.bookmarks);
   }
@@ -53,9 +54,24 @@ export class FloatingInputComponent implements OnInit {
     this.bookmarkForm.reset();
   }
 
+  removeBookmark = (e) => {
+    if (!e.target.matches('.glyphicon-remove')) {
+      return;
+    }
+    const index = e.target.parentNode.dataset.id;
+    this.bookmarks.splice(index, 1);
+    this.storeBookmarks(this.bookmarks);
+  }
+
   fillBookmarksList = (bookmarks = []) => {
-    const bookmarksHtml = bookmarks.map((bookmark) => {
-      return `<a href="#" class="bookmark"> ${bookmark.title}`;
+    const bookmarksHtml = bookmarks.map((bookmark, i) => {
+      return `
+        <a class="bookmark" data-id="${i}">
+          <div class="img"> </div>
+          <div class="title"> ${bookmark.title} </div>
+          <span class="glyphicon glyphicon-remove"> </span>
+        </a>
+      `;
     }).join('');
 
     this.bookmarksList.innerHTML = bookmarksHtml;
